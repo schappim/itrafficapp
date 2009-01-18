@@ -1,0 +1,571 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1D3623260D0F684500981E51 /* iTrafficAppAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* iTrafficAppAppDelegate.m */; };
+		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
+		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754A0DD40C5E005A515E /* FlipsideView.xib */; };
+		280E754E0DD40C5E005A515E /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754B0DD40C5E005A515E /* MainView.xib */; };
+		280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 280E754C0DD40C5E005A515E /* MainWindow.xib */; };
+		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
+		289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
+		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
+		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
+		289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AB0DB2D0DB0083E9F9 /* RootViewController.m */; };
+		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		B84CD56E0F20CA3600782038 /* NSObject+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B84CD5600F20CA3600782038 /* NSObject+SBJSON.m */; };
+		B84CD56F0F20CA3600782038 /* NSString+SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B84CD5620F20CA3600782038 /* NSString+SBJSON.m */; };
+		B84CD5700F20CA3600782038 /* SBJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B84CD5640F20CA3600782038 /* SBJSON.m */; };
+		B84CD5710F20CA3600782038 /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = B84CD5670F20CA3600782038 /* FMDatabase.m */; };
+		B84CD5720F20CA3600782038 /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B84CD5690F20CA3600782038 /* FMDatabaseAdditions.m */; };
+		B84CD5740F20CA3600782038 /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = B84CD56C0F20CA3600782038 /* FMResultSet.m */; };
+		B84CD5750F20CA3600782038 /* README.txt in Resources */ = {isa = PBXBuildFile; fileRef = B84CD56D0F20CA3600782038 /* README.txt */; };
+		B84CD5910F20CA7900782038 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B84CD58F0F20CA7900782038 /* libsqlite3.dylib */; };
+		B84CD5920F20CA7900782038 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84CD5900F20CA7900782038 /* QuartzCore.framework */; };
+		B84CD5960F20CA8600782038 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B84CD5950F20CA8600782038 /* CoreLocation.framework */; };
+		B84CD5D50F20CAA900782038 /* libMapView.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B84CD5810F20CA6D00782038 /* libMapView.a */; };
+		B84CD5EC0F20CB6900782038 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B84CD5EB0F20CB6900782038 /* MapViewController.m */; };
+		B84CD6570F20D4CD00782038 /* marker-blue.png in Resources */ = {isa = PBXBuildFile; fileRef = B84CD6520F20D4CD00782038 /* marker-blue.png */; };
+		B84CD6580F20D4CD00782038 /* marker-red-withletter.png in Resources */ = {isa = PBXBuildFile; fileRef = B84CD6530F20D4CD00782038 /* marker-red-withletter.png */; };
+		B84CD6590F20D4CD00782038 /* marker-red.png in Resources */ = {isa = PBXBuildFile; fileRef = B84CD6540F20D4CD00782038 /* marker-red.png */; };
+		B84CD65A0F20D4CD00782038 /* marker-blue-withletter.png in Resources */ = {isa = PBXBuildFile; fileRef = B84CD6550F20D4CD00782038 /* marker-blue-withletter.png */; };
+		B8A2C23C0F21B02A0011FF1F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A2C23B0F21B02A0011FF1F /* icon.png */; };
+		B8A2C23E0F21B0370011FF1F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A2C23D0F21B0370011FF1F /* Default.png */; };
+		B8A2C2600F21B6A70011FF1F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A2C25F0F21B6A70011FF1F /* CoreAudio.framework */; };
+		B8D8309C0F213C540054B2F5 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D8309B0F213C540054B2F5 /* MapView.xib */; };
+		B8D8314C0F2154590054B2F5 /* LocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D831490F2154590054B2F5 /* LocationHandler.m */; };
+		B8D8314D0F2154590054B2F5 /* PostHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D8314B0F2154590054B2F5 /* PostHandler.m */; };
+		B8D831800F215A0B0054B2F5 /* drop_pin_camera_mobile.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D8317C0F215A0B0054B2F5 /* drop_pin_camera_mobile.png */; };
+		B8D831810F215A0B0054B2F5 /* drop_pin_rbt.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D8317D0F215A0B0054B2F5 /* drop_pin_rbt.png */; };
+		B8D831820F215A0B0054B2F5 /* drop_pin_red-light.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D8317E0F215A0B0054B2F5 /* drop_pin_red-light.png */; };
+		B8D831830F215A0B0054B2F5 /* drop_pin_camera2.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D8317F0F215A0B0054B2F5 /* drop_pin_camera2.png */; };
+		B8D832020F2164820054B2F5 /* Crosshairs.png in Resources */ = {isa = PBXBuildFile; fileRef = B8D832010F2164820054B2F5 /* Crosshairs.png */; };
+		B8D832530F218C440054B2F5 /* delay_expected.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D8324E0F218C440054B2F5 /* delay_expected.wav */; };
+		B8D832540F218C440054B2F5 /* rbt.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D8324F0F218C440054B2F5 /* rbt.wav */; };
+		B8D832550F218C440054B2F5 /* red_light.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832500F218C440054B2F5 /* red_light.wav */; };
+		B8D832560F218C440054B2F5 /* speed_camera.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832510F218C440054B2F5 /* speed_camera.wav */; };
+		B8D832570F218C440054B2F5 /* traffic_hazard.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832520F218C440054B2F5 /* traffic_hazard.wav */; };
+		B8D832630F218DE70054B2F5 /* POIDb.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D832620F218DE70054B2F5 /* POIDb.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B84CD57E0F20CA6D00782038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B84CD5790F20CA6D00782038 /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B83E673E0E80F332001663B6;
+			remoteInfo = SimpleMap;
+		};
+		B84CD5800F20CA6D00782038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B84CD5790F20CA6D00782038 /* MapView.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B8C974590E8A19B2007D16AD;
+			remoteInfo = MapView;
+		};
+		B84CD5930F20CA7F00782038 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B84CD5790F20CA6D00782038 /* MapView.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B8C974130E8A19B2007D16AD;
+			remoteInfo = MapView;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		1D3623240D0F684500981E51 /* iTrafficAppAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTrafficAppAppDelegate.h; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* iTrafficAppAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iTrafficAppAppDelegate.m; sourceTree = "<group>"; };
+		1D6058910D05DD3D006BFB54 /* iTrafficApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iTrafficApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
+		280E754B0DD40C5E005A515E /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainView.xib; sourceTree = "<group>"; };
+		280E754C0DD40C5E005A515E /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
+		288765580DF743DE002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		289233A20DB2D0840083E9F9 /* FlipsideView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideView.h; path = Classes/FlipsideView.h; sourceTree = "<group>"; };
+		289233A30DB2D0840083E9F9 /* FlipsideView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideView.m; path = Classes/FlipsideView.m; sourceTree = "<group>"; };
+		289233A40DB2D0840083E9F9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Classes/MainView.h; sourceTree = "<group>"; };
+		289233A50DB2D0840083E9F9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Classes/MainView.m; sourceTree = "<group>"; };
+		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
+		289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		289233AA0DB2D0DB0083E9F9 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		289233AB0DB2D0DB0083E9F9 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideViewController.h; path = Classes/FlipsideViewController.h; sourceTree = "<group>"; };
+		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideViewController.m; path = Classes/FlipsideViewController.m; sourceTree = "<group>"; };
+		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		32CA4F630368D1EE00C91783 /* iTrafficApp_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iTrafficApp_Prefix.pch; sourceTree = "<group>"; };
+		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B84CD55E0F20CA3600782038 /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
+		B84CD55F0F20CA3600782038 /* NSObject+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+SBJSON.h"; sourceTree = "<group>"; };
+		B84CD5600F20CA3600782038 /* NSObject+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+SBJSON.m"; sourceTree = "<group>"; };
+		B84CD5610F20CA3600782038 /* NSString+SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+SBJSON.h"; sourceTree = "<group>"; };
+		B84CD5620F20CA3600782038 /* NSString+SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+SBJSON.m"; sourceTree = "<group>"; };
+		B84CD5630F20CA3600782038 /* SBJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJSON.h; sourceTree = "<group>"; };
+		B84CD5640F20CA3600782038 /* SBJSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJSON.m; sourceTree = "<group>"; };
+		B84CD5660F20CA3600782038 /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		B84CD5670F20CA3600782038 /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		B84CD5680F20CA3600782038 /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		B84CD5690F20CA3600782038 /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		B84CD56A0F20CA3600782038 /* fmdb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = fmdb.m; sourceTree = "<group>"; };
+		B84CD56B0F20CA3600782038 /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		B84CD56C0F20CA3600782038 /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		B84CD56D0F20CA3600782038 /* README.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.txt; sourceTree = "<group>"; };
+		B84CD5790F20CA6D00782038 /* MapView.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MapView.xcodeproj; path = ../RouteMe/MapView/MapView.xcodeproj; sourceTree = SOURCE_ROOT; };
+		B84CD58F0F20CA7900782038 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		B84CD5900F20CA7900782038 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		B84CD5950F20CA8600782038 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B84CD5EA0F20CB6900782038 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B84CD5EB0F20CB6900782038 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		B84CD6520F20D4CD00782038 /* marker-blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-blue.png"; sourceTree = "<group>"; };
+		B84CD6530F20D4CD00782038 /* marker-red-withletter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-withletter.png"; sourceTree = "<group>"; };
+		B84CD6540F20D4CD00782038 /* marker-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red.png"; sourceTree = "<group>"; };
+		B84CD6550F20D4CD00782038 /* marker-blue-withletter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-blue-withletter.png"; sourceTree = "<group>"; };
+		B8A2C23B0F21B02A0011FF1F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		B8A2C23D0F21B0370011FF1F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		B8A2C25F0F21B6A70011FF1F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
+		B8D8309B0F213C540054B2F5 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
+		B8D831480F2154590054B2F5 /* LocationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHandler.h; sourceTree = "<group>"; };
+		B8D831490F2154590054B2F5 /* LocationHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationHandler.m; sourceTree = "<group>"; };
+		B8D8314A0F2154590054B2F5 /* PostHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostHandler.h; sourceTree = "<group>"; };
+		B8D8314B0F2154590054B2F5 /* PostHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostHandler.m; sourceTree = "<group>"; };
+		B8D8317C0F215A0B0054B2F5 /* drop_pin_camera_mobile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_pin_camera_mobile.png; sourceTree = "<group>"; };
+		B8D8317D0F215A0B0054B2F5 /* drop_pin_rbt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_pin_rbt.png; sourceTree = "<group>"; };
+		B8D8317E0F215A0B0054B2F5 /* drop_pin_red-light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "drop_pin_red-light.png"; sourceTree = "<group>"; };
+		B8D8317F0F215A0B0054B2F5 /* drop_pin_camera2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_pin_camera2.png; sourceTree = "<group>"; };
+		B8D832010F2164820054B2F5 /* Crosshairs.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Crosshairs.png; sourceTree = "<group>"; };
+		B8D8324E0F218C440054B2F5 /* delay_expected.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = delay_expected.wav; sourceTree = "<group>"; };
+		B8D8324F0F218C440054B2F5 /* rbt.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rbt.wav; sourceTree = "<group>"; };
+		B8D832500F218C440054B2F5 /* red_light.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = red_light.wav; sourceTree = "<group>"; };
+		B8D832510F218C440054B2F5 /* speed_camera.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = speed_camera.wav; sourceTree = "<group>"; };
+		B8D832520F218C440054B2F5 /* traffic_hazard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = traffic_hazard.wav; sourceTree = "<group>"; };
+		B8D832610F218DE70054B2F5 /* POIDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIDb.h; sourceTree = "<group>"; };
+		B8D832620F218DE70054B2F5 /* POIDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIDb.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1D60588F0D05DD3D006BFB54 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
+				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
+				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
+				B84CD5910F20CA7900782038 /* libsqlite3.dylib in Frameworks */,
+				B84CD5920F20CA7900782038 /* QuartzCore.framework in Frameworks */,
+				B84CD5960F20CA8600782038 /* CoreLocation.framework in Frameworks */,
+				B84CD5D50F20CAA900782038 /* libMapView.a in Frameworks */,
+				B8A2C2600F21B6A70011FF1F /* CoreAudio.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		080E96DDFE201D6D7F000001 /* Application Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				289233AA0DB2D0DB0083E9F9 /* RootViewController.h */,
+				289233AB0DB2D0DB0083E9F9 /* RootViewController.m */,
+				1D3623240D0F684500981E51 /* iTrafficAppAppDelegate.h */,
+				1D3623250D0F684500981E51 /* iTrafficAppAppDelegate.m */,
+			);
+			name = "Application Controllers";
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		19C28FACFE9D520D11CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1D6058910D05DD3D006BFB54 /* iTrafficApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		281C6CD70DB2D82200F60ACC /* Flipside View */ = {
+			isa = PBXGroup;
+			children = (
+				289233A20DB2D0840083E9F9 /* FlipsideView.h */,
+				289233A30DB2D0840083E9F9 /* FlipsideView.m */,
+				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
+				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
+			);
+			name = "Flipside View";
+			sourceTree = "<group>";
+		};
+		289233A00DB2D0730083E9F9 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+				B8D831480F2154590054B2F5 /* LocationHandler.h */,
+				B8D831490F2154590054B2F5 /* LocationHandler.m */,
+				B8D8314A0F2154590054B2F5 /* PostHandler.h */,
+				B8D8314B0F2154590054B2F5 /* PostHandler.m */,
+				289233A40DB2D0840083E9F9 /* MainView.h */,
+				289233A50DB2D0840083E9F9 /* MainView.m */,
+				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
+				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
+				B84CD5EA0F20CB6900782038 /* MapViewController.h */,
+				B84CD5EB0F20CB6900782038 /* MapViewController.m */,
+				B84CD6510F20D4CD00782038 /* Resources */,
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+			isa = PBXGroup;
+			children = (
+				B8D832600F218DD40054B2F5 /* Database */,
+				B84CD55D0F20CA3600782038 /* JSON */,
+				289233A00DB2D0730083E9F9 /* Main View */,
+				281C6CD70DB2D82200F60ACC /* Flipside View */,
+				080E96DDFE201D6D7F000001 /* Application Controllers */,
+				29B97315FDCFA39411CA2CEA /* Other Sources */,
+				29B97317FDCFA39411CA2CEA /* Resources */,
+				29B97323FDCFA39411CA2CEA /* Frameworks */,
+				19C28FACFE9D520D11CA2CBB /* Products */,
+				B8A2C25F0F21B6A70011FF1F /* CoreAudio.framework */,
+			);
+			name = CustomTemplate;
+			sourceTree = "<group>";
+		};
+		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32CA4F630368D1EE00C91783 /* iTrafficApp_Prefix.pch */,
+				29B97316FDCFA39411CA2CEA /* main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		29B97317FDCFA39411CA2CEA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
+				280E754B0DD40C5E005A515E /* MainView.xib */,
+				280E754C0DD40C5E005A515E /* MainWindow.xib */,
+				8D1107310486CEB800E47090 /* Info.plist */,
+				B8D8309B0F213C540054B2F5 /* MapView.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B84CD5950F20CA8600782038 /* CoreLocation.framework */,
+				B84CD58F0F20CA7900782038 /* libsqlite3.dylib */,
+				B84CD5900F20CA7900782038 /* QuartzCore.framework */,
+				B84CD5790F20CA6D00782038 /* MapView.xcodeproj */,
+				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
+				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				288765580DF743DE002DB57D /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B84CD55D0F20CA3600782038 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				B84CD55E0F20CA3600782038 /* JSON.h */,
+				B84CD55F0F20CA3600782038 /* NSObject+SBJSON.h */,
+				B84CD5600F20CA3600782038 /* NSObject+SBJSON.m */,
+				B84CD5610F20CA3600782038 /* NSString+SBJSON.h */,
+				B84CD5620F20CA3600782038 /* NSString+SBJSON.m */,
+				B84CD5630F20CA3600782038 /* SBJSON.h */,
+				B84CD5640F20CA3600782038 /* SBJSON.m */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
+		B84CD5650F20CA3600782038 /* FMDB */ = {
+			isa = PBXGroup;
+			children = (
+				B84CD5660F20CA3600782038 /* FMDatabase.h */,
+				B84CD5670F20CA3600782038 /* FMDatabase.m */,
+				B84CD5680F20CA3600782038 /* FMDatabaseAdditions.h */,
+				B84CD5690F20CA3600782038 /* FMDatabaseAdditions.m */,
+				B84CD56A0F20CA3600782038 /* fmdb.m */,
+				B84CD56B0F20CA3600782038 /* FMResultSet.h */,
+				B84CD56C0F20CA3600782038 /* FMResultSet.m */,
+				B84CD56D0F20CA3600782038 /* README.txt */,
+			);
+			path = FMDB;
+			sourceTree = "<group>";
+		};
+		B84CD57A0F20CA6D00782038 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B84CD57F0F20CA6D00782038 /* MapView.app */,
+				B84CD5810F20CA6D00782038 /* libMapView.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B84CD6510F20D4CD00782038 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B8A2C23B0F21B02A0011FF1F /* icon.png */,
+				B8A2C23D0F21B0370011FF1F /* Default.png */,
+				B8D8324D0F218C440054B2F5 /* audio */,
+				B8D832010F2164820054B2F5 /* Crosshairs.png */,
+				B8D8317C0F215A0B0054B2F5 /* drop_pin_camera_mobile.png */,
+				B8D8317D0F215A0B0054B2F5 /* drop_pin_rbt.png */,
+				B8D8317E0F215A0B0054B2F5 /* drop_pin_red-light.png */,
+				B8D8317F0F215A0B0054B2F5 /* drop_pin_camera2.png */,
+				B84CD6520F20D4CD00782038 /* marker-blue.png */,
+				B84CD6530F20D4CD00782038 /* marker-red-withletter.png */,
+				B84CD6540F20D4CD00782038 /* marker-red.png */,
+				B84CD6550F20D4CD00782038 /* marker-blue-withletter.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B8D8324D0F218C440054B2F5 /* audio */ = {
+			isa = PBXGroup;
+			children = (
+				B8D8324E0F218C440054B2F5 /* delay_expected.wav */,
+				B8D8324F0F218C440054B2F5 /* rbt.wav */,
+				B8D832500F218C440054B2F5 /* red_light.wav */,
+				B8D832510F218C440054B2F5 /* speed_camera.wav */,
+				B8D832520F218C440054B2F5 /* traffic_hazard.wav */,
+			);
+			path = audio;
+			sourceTree = "<group>";
+		};
+		B8D832600F218DD40054B2F5 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				B84CD5650F20CA3600782038 /* FMDB */,
+				B8D832610F218DE70054B2F5 /* POIDb.h */,
+				B8D832620F218DE70054B2F5 /* POIDb.m */,
+			);
+			name = Database;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1D6058900D05DD3D006BFB54 /* iTrafficApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrafficApp" */;
+			buildPhases = (
+				1D60588D0D05DD3D006BFB54 /* Resources */,
+				1D60588E0D05DD3D006BFB54 /* Sources */,
+				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B84CD5940F20CA7F00782038 /* PBXTargetDependency */,
+			);
+			name = iTrafficApp;
+			productName = iTrafficApp;
+			productReference = 1D6058910D05DD3D006BFB54 /* iTrafficApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		29B97313FDCFA39411CA2CEA /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iTrafficApp" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+				en,
+			);
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = B84CD57A0F20CA6D00782038 /* Products */;
+					ProjectRef = B84CD5790F20CA6D00782038 /* MapView.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				1D6058900D05DD3D006BFB54 /* iTrafficApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		B84CD57F0F20CA6D00782038 /* MapView.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = MapView.app;
+			remoteRef = B84CD57E0F20CA6D00782038 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		B84CD5810F20CA6D00782038 /* libMapView.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMapView.a;
+			remoteRef = B84CD5800F20CA6D00782038 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1D60588D0D05DD3D006BFB54 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				280E754D0DD40C5E005A515E /* FlipsideView.xib in Resources */,
+				280E754E0DD40C5E005A515E /* MainView.xib in Resources */,
+				280E754F0DD40C5E005A515E /* MainWindow.xib in Resources */,
+				B84CD5750F20CA3600782038 /* README.txt in Resources */,
+				B84CD6570F20D4CD00782038 /* marker-blue.png in Resources */,
+				B84CD6580F20D4CD00782038 /* marker-red-withletter.png in Resources */,
+				B84CD6590F20D4CD00782038 /* marker-red.png in Resources */,
+				B84CD65A0F20D4CD00782038 /* marker-blue-withletter.png in Resources */,
+				B8D8309C0F213C540054B2F5 /* MapView.xib in Resources */,
+				B8D831800F215A0B0054B2F5 /* drop_pin_camera_mobile.png in Resources */,
+				B8D831810F215A0B0054B2F5 /* drop_pin_rbt.png in Resources */,
+				B8D831820F215A0B0054B2F5 /* drop_pin_red-light.png in Resources */,
+				B8D831830F215A0B0054B2F5 /* drop_pin_camera2.png in Resources */,
+				B8D832020F2164820054B2F5 /* Crosshairs.png in Resources */,
+				B8D832530F218C440054B2F5 /* delay_expected.wav in Resources */,
+				B8D832540F218C440054B2F5 /* rbt.wav in Resources */,
+				B8D832550F218C440054B2F5 /* red_light.wav in Resources */,
+				B8D832560F218C440054B2F5 /* speed_camera.wav in Resources */,
+				B8D832570F218C440054B2F5 /* traffic_hazard.wav in Resources */,
+				B8A2C23C0F21B02A0011FF1F /* icon.png in Resources */,
+				B8A2C23E0F21B0370011FF1F /* Default.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1D60588E0D05DD3D006BFB54 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
+				1D3623260D0F684500981E51 /* iTrafficAppAppDelegate.m in Sources */,
+				289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */,
+				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
+				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
+				289233AF0DB2D0DB0083E9F9 /* RootViewController.m in Sources */,
+				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
+				B84CD56E0F20CA3600782038 /* NSObject+SBJSON.m in Sources */,
+				B84CD56F0F20CA3600782038 /* NSString+SBJSON.m in Sources */,
+				B84CD5700F20CA3600782038 /* SBJSON.m in Sources */,
+				B84CD5710F20CA3600782038 /* FMDatabase.m in Sources */,
+				B84CD5720F20CA3600782038 /* FMDatabaseAdditions.m in Sources */,
+				B84CD5740F20CA3600782038 /* FMResultSet.m in Sources */,
+				B84CD5EC0F20CB6900782038 /* MapViewController.m in Sources */,
+				B8D8314C0F2154590054B2F5 /* LocationHandler.m in Sources */,
+				B8D8314D0F2154590054B2F5 /* PostHandler.m in Sources */,
+				B8D832630F218DE70054B2F5 /* POIDb.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B84CD5940F20CA7F00782038 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MapView;
+			targetProxy = B84CD5930F20CA7F00782038 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1D6058940D05DD3E006BFB54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iTrafficApp_Prefix.pch;
+				HEADER_SEARCH_PATHS = "../RouteMe/MapView/**";
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = iTrafficApp;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "15BCA629-7622-4574-B0FE-87C5AF2CC980";
+			};
+			name = Debug;
+		};
+		1D6058950D05DD3E006BFB54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iTrafficApp_Prefix.pch;
+				HEADER_SEARCH_PATHS = "../RouteMe/MapView/**";
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = iTrafficApp;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "15BCA629-7622-4574-B0FE-87C5AF2CC980";
+			};
+			name = Release;
+		};
+		C01FCF4F08A954540054247B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Gentle";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "~/src/RouteMe/MapView/**";
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4CA03E1F-6E49-41EA-8A12-879B3BBE8DE1";
+				SDKROOT = iphoneos2.2;
+			};
+			name = Debug;
+		};
+		C01FCF5008A954540054247B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Gentle";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "~/src/RouteMe/MapView/**";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4CA03E1F-6E49-41EA-8A12-879B3BBE8DE1";
+				SDKROOT = iphoneos2.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "iTrafficApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6058940D05DD3E006BFB54 /* Debug */,
+				1D6058950D05DD3E006BFB54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "iTrafficApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C01FCF4F08A954540054247B /* Debug */,
+				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+}
