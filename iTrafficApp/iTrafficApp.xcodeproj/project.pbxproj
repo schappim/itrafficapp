@@ -36,8 +36,6 @@
 		B84CD6580F20D4CD00782038 /* marker-red-withletter.png in Resources */ = {isa = PBXBuildFile; fileRef = B84CD6530F20D4CD00782038 /* marker-red-withletter.png */; };
 		B84CD6590F20D4CD00782038 /* marker-red.png in Resources */ = {isa = PBXBuildFile; fileRef = B84CD6540F20D4CD00782038 /* marker-red.png */; };
 		B84CD65A0F20D4CD00782038 /* marker-blue-withletter.png in Resources */ = {isa = PBXBuildFile; fileRef = B84CD6550F20D4CD00782038 /* marker-blue-withletter.png */; };
-		B8A2C23C0F21B02A0011FF1F /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A2C23B0F21B02A0011FF1F /* icon.png */; };
-		B8A2C23E0F21B0370011FF1F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B8A2C23D0F21B0370011FF1F /* Default.png */; };
 		B8A2C2600F21B6A70011FF1F /* CoreAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B8A2C25F0F21B6A70011FF1F /* CoreAudio.framework */; };
 		B8D8309C0F213C540054B2F5 /* MapView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D8309B0F213C540054B2F5 /* MapView.xib */; };
 		B8D8314C0F2154590054B2F5 /* LocationHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D831490F2154590054B2F5 /* LocationHandler.m */; };
@@ -53,6 +51,10 @@
 		B8D832560F218C440054B2F5 /* speed_camera.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832510F218C440054B2F5 /* speed_camera.wav */; };
 		B8D832570F218C440054B2F5 /* traffic_hazard.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832520F218C440054B2F5 /* traffic_hazard.wav */; };
 		B8D832630F218DE70054B2F5 /* POIDb.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D832620F218DE70054B2F5 /* POIDb.m */; };
+		BFC69EC10F26A88C000A517D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC69EC00F26A88C000A517D /* icon.png */; };
+		BFC69EC40F26B076000A517D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC69EC30F26B076000A517D /* Default.png */; };
+		BFC69EC80F26B1C6000A517D /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC69EC60F26B1C6000A517D /* SoundEffect.m */; };
+		BFC69ED10F26B45D000A517D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BFC69ED00F26B45D000A517D /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,8 +129,6 @@
 		B84CD6530F20D4CD00782038 /* marker-red-withletter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red-withletter.png"; sourceTree = "<group>"; };
 		B84CD6540F20D4CD00782038 /* marker-red.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-red.png"; sourceTree = "<group>"; };
 		B84CD6550F20D4CD00782038 /* marker-blue-withletter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "marker-blue-withletter.png"; sourceTree = "<group>"; };
-		B8A2C23B0F21B02A0011FF1F /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		B8A2C23D0F21B0370011FF1F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		B8A2C25F0F21B6A70011FF1F /* CoreAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudio.framework; path = System/Library/Frameworks/CoreAudio.framework; sourceTree = SDKROOT; };
 		B8D8309B0F213C540054B2F5 /* MapView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MapView.xib; sourceTree = "<group>"; };
 		B8D831480F2154590054B2F5 /* LocationHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationHandler.h; sourceTree = "<group>"; };
@@ -147,6 +147,11 @@
 		B8D832520F218C440054B2F5 /* traffic_hazard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = traffic_hazard.wav; sourceTree = "<group>"; };
 		B8D832610F218DE70054B2F5 /* POIDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIDb.h; sourceTree = "<group>"; };
 		B8D832620F218DE70054B2F5 /* POIDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIDb.m; sourceTree = "<group>"; };
+		BFC69EC00F26A88C000A517D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		BFC69EC30F26B076000A517D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		BFC69EC60F26B1C6000A517D /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
+		BFC69EC70F26B1C6000A517D /* SoundEffect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundEffect.h; sourceTree = "<group>"; };
+		BFC69ED00F26B45D000A517D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +167,7 @@
 				B84CD5960F20CA8600782038 /* CoreLocation.framework in Frameworks */,
 				B84CD5D50F20CAA900782038 /* libMapView.a in Frameworks */,
 				B8A2C2600F21B6A70011FF1F /* CoreAudio.framework in Frameworks */,
+				BFC69ED10F26B45D000A517D /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -202,6 +208,8 @@
 		289233A00DB2D0730083E9F9 /* Main View */ = {
 			isa = PBXGroup;
 			children = (
+				BFC69EC60F26B1C6000A517D /* SoundEffect.m */,
+				BFC69EC70F26B1C6000A517D /* SoundEffect.h */,
 				B8D831480F2154590054B2F5 /* LocationHandler.h */,
 				B8D831490F2154590054B2F5 /* LocationHandler.m */,
 				B8D8314A0F2154590054B2F5 /* PostHandler.h */,
@@ -258,6 +266,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BFC69ED00F26B45D000A517D /* AudioToolbox.framework */,
 				B84CD5950F20CA8600782038 /* CoreLocation.framework */,
 				B84CD58F0F20CA7900782038 /* libsqlite3.dylib */,
 				B84CD5900F20CA7900782038 /* QuartzCore.framework */,
@@ -310,8 +319,8 @@
 		B84CD6510F20D4CD00782038 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				B8A2C23B0F21B02A0011FF1F /* icon.png */,
-				B8A2C23D0F21B0370011FF1F /* Default.png */,
+				BFC69EC30F26B076000A517D /* Default.png */,
+				BFC69EC00F26A88C000A517D /* icon.png */,
 				B8D8324D0F218C440054B2F5 /* audio */,
 				B8D832010F2164820054B2F5 /* Crosshairs.png */,
 				B8D8317C0F215A0B0054B2F5 /* drop_pin_camera_mobile.png */,
@@ -440,8 +449,8 @@
 				B8D832550F218C440054B2F5 /* red_light.wav in Resources */,
 				B8D832560F218C440054B2F5 /* speed_camera.wav in Resources */,
 				B8D832570F218C440054B2F5 /* traffic_hazard.wav in Resources */,
-				B8A2C23C0F21B02A0011FF1F /* icon.png in Resources */,
-				B8A2C23E0F21B0370011FF1F /* Default.png in Resources */,
+				BFC69EC10F26A88C000A517D /* icon.png in Resources */,
+				BFC69EC40F26B076000A517D /* Default.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -469,6 +478,7 @@
 				B8D8314C0F2154590054B2F5 /* LocationHandler.m in Sources */,
 				B8D8314D0F2154590054B2F5 /* PostHandler.m in Sources */,
 				B8D832630F218DE70054B2F5 /* POIDb.m in Sources */,
+				BFC69EC80F26B1C6000A517D /* SoundEffect.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +497,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Graham Dawson";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -495,7 +506,7 @@
 				HEADER_SEARCH_PATHS = "../RouteMe/MapView/**";
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = iTrafficApp;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "15BCA629-7622-4574-B0FE-87C5AF2CC980";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "2F947C36-3E4B-4732-A459-7D83DC45DCB4";
 			};
 			name = Debug;
 		};

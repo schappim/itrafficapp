@@ -13,11 +13,13 @@
 @class RMMarker;
 @class RMMapView;
 
-@interface MapViewController : UIViewController {
+@interface MapViewController : UIViewController <UIActionSheetDelegate> {
 	LocationHandler *locHandler;
 	PostHandler *post;
 	UIProgressView *progress;
 	RMMarker *userMark;
+	NSMutableArray *soundEffects;
+	CLLocationCoordinate2D latestLocation;
 }
 
 @property (nonatomic, readonly) IBOutlet RMMapView *mapView;

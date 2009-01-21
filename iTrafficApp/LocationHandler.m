@@ -18,7 +18,7 @@
 	previousTime = [[NSDate alloc] init];
 	
 	locationManager = [[CLLocationManager alloc] init];
-	locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters;
+	locationManager.desiredAccuracy = kCLLocationAccuracyBest;
 	locationManager.distanceFilter = 100.0;
 	locationManager.delegate = self;	
 	
@@ -50,14 +50,14 @@
 		   fromLocation:(CLLocation *)oldLocation {	
 	
 	
-//#if TARGET_IPHONE_SIMULATOR
+#if TARGET_IPHONE_SIMULATOR
 	CLLocationCoordinate2D hereLocation = newLocation.coordinate;
 	hereLocation.latitude = -33.8;
 	hereLocation.longitude = 151.25;
 	[newLocation release];
 	newLocation = [[CLLocation alloc] initWithLatitude:hereLocation.latitude longitude:hereLocation.longitude];	
 	//newLocation.coordinate = hereLocation;
-//#endif
+#endif
 	
 	NSDate *nowTime = [[NSDate alloc] init];
 	float speedkmh;
@@ -69,7 +69,7 @@
 		speedkmh = 0.0;
 	}
 	
-	[receiver didReceiveLocationUpdate:newLocation.coordinate speedkmh:speedkmh];
+	[receiver didReceiveLocationUpdate:newLocation.coordinate speedkmh:speedkmh course:newLocation.course];
 	
 	[previousTime release];
 	previousTime = [nowTime copy];

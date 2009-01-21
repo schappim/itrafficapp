@@ -10,7 +10,7 @@
 #import <CoreLocation/CoreLocation.h>
 
 @protocol LocationHandlerProtocol
--(void)didReceiveLocationUpdate:(CLLocationCoordinate2D)location speedkmh:(float)speedkmh;
+-(void)didReceiveLocationUpdate:(CLLocationCoordinate2D)location speedkmh:(float)speedkmh course:(float)course;
 @end
 
 @interface LocationHandler : NSObject <CLLocationManagerDelegate> {

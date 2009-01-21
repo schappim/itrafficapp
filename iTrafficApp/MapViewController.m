@@ -12,8 +12,16 @@
 #import "RMMarkerManager.h"
 #import "RMMarker.h"
 #import "POIDb.h"
+#import "SoundEffect.h"
 
 @implementation MapViewController
+
+// These get values assigned in loadSounds
+NSInteger kSoundSpeedCamera;
+NSInteger kSoundRedLightCamera;
+NSInteger kSoundTrafficDelay;
+NSInteger kSoundTrafficHazzard;
+NSInteger kSoundRBT;
 
 /*
 // The designated initializer. Override to perform setup that is required before the view is loaded.
@@ -112,6 +120,50 @@
 	return (RMMapView *)[self view];
 }
 
+- (void)loadSounds {
+	soundEffects = [[NSMutableArray alloc] initWithCapacity:10];
+	SoundEffect *thisSoundEffect;
+	NSBundle *mainBundle = [NSBundle mainBundle];
+	NSString *soundFile;
+	NSString *soundFileName;
+	
+	soundFileName = @"speed_camera";
+	soundFile = [mainBundle pathForResource:soundFileName ofType:@"wav"];
+	thisSoundEffect = [[SoundEffect alloc] initWithContentsOfFile:soundFile];
+	[soundEffects addObject:thisSoundEffect];
+	kSoundSpeedCamera = [soundEffects count]-1;
+	[thisSoundEffect release];
+	
+	soundFileName = @"red_light";
+	soundFile = [mainBundle pathForResource:soundFileName ofType:@"wav"];
+	thisSoundEffect = [[SoundEffect alloc] initWithContentsOfFile:soundFile];
+	[soundEffects addObject:thisSoundEffect];
+	kSoundRedLightCamera = [soundEffects count]-1;
+	[thisSoundEffect release];
+	
+	soundFileName = @"delay_expected";
+	soundFile = [mainBundle pathForResource:soundFileName ofType:@"wav"];
+	thisSoundEffect = [[SoundEffect alloc] initWithContentsOfFile:soundFile];
+	[soundEffects addObject:thisSoundEffect];
+	kSoundTrafficDelay = [soundEffects count]-1;
+	[thisSoundEffect release];
+	
+	soundFileName = @"traffic_hazard";
+	soundFile = [mainBundle pathForResource:soundFileName ofType:@"wav"];
+	thisSoundEffect = [[SoundEffect alloc] initWithContentsOfFile:soundFile];
+	[soundEffects addObject:thisSoundEffect];
+	kSoundTrafficHazzard = [soundEffects count]-1;
+	[thisSoundEffect release];
+	
+	soundFileName = @"rbt";
+	soundFile = [mainBundle pathForResource:soundFileName ofType:@"wav"];
+	thisSoundEffect = [[SoundEffect alloc] initWithContentsOfFile:soundFile];
+	[soundEffects addObject:thisSoundEffect];
+	kSoundRBT = [soundEffects count]-1;
+	[thisSoundEffect release];
+		
+}
+
 // Implement loadView to create a view hierarchy programmatically, without using a nib.
 - (void)loadView {
 	RMMapView *mapView = [[RMMapView alloc] initWithFrame:CGRectMake(0, 0, 320, 460)];
@@ -127,6 +179,12 @@
 //	[test setText:@"asdfadfasdfasdf"];
 	
 	[self setView:mapView];
+	
+	[self loadSounds];
+	
+	// TODO - initialise these from cached map location
+	latestLocation.latitude = -1.0;
+	latestLocation.longitude = -1.0;	
 }
 
 // Play an alert if need be.
@@ -134,45 +192,56 @@
 	NSArray *points = [[POIDb sharedInstance] poiInRangeOf:location];
 	
 	if ([points count] > 0) {
-//		SystemSoundID    mySSID;
-//		CFURLRef        myURLRef;
-//		myURLRef = CFURLCreateWithFileSystemPath (
-//												  kCFAllocatorDefault,
-//												  CFSTR ("../../ComedyHorns.aif"),
-//												  kCFURLPOSIXPathStyle,
-//												  FALSE
-//												  );
-//		
-//		// create a system sound ID to represent the sound file
-//		OSStatus error = AudioServicesCreateSystemSoundID (myURLRef, &mySSID);
-//		
-//		// Play the sound file.
-//		AudioServicesPlaySystemSound (mySSID);
-//		
-//		NSString* soundFile = [[NSBundle mainBundle] pathForResource:@"speed_camera" ofType:@"wav"];
-//		NSSound* sound = [[NSSound alloc] initWithContentsOfFile:soundFile byReference:YES];
-//		[sound 
+		// Need to pick sound for correct point/marker type here....
+		// For now is just use speed camera sound
+		[(SoundEffect *)[soundEffects objectAtIndex:kSoundSpeedCamera] play];
 	}
 }
 
-- (void)didReceiveLocationUpdate:(CLLocationCoordinate2D)location speedkmh:(float)speedkmh {
-	NSLog(@"didReceiveLocationUpdate %f %f %f", location.latitude, location.longitude, speedkmh);
+- (void)didReceiveLocationUpdate:(CLLocationCoordinate2D)location speedkmh:(float)speedkmh course:(float)course {
+	NSLog(@"didReceiveLocationUpdate %f %f %f %f", location.latitude, location.longitude, speedkmh, course);
 	[[self mapView] moveToLatLong:location];
 	[[[self mapView] markerManager] moveMarker:userMark AtLatLon:location];
 	[userMark unhide];
 	
 	[self checkAlertsAtNewLocation:location];
+	
+	latestLocation = location;
 }
 
 - (void)showUserOptionsDialog {
-	UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Select Hazard Type"
-													message:nil
-												   delegate:self 
-										  cancelButtonTitle:@"Cancel" 
-										  otherButtonTitles:@"Speed Camera", @"Traffic Delay", nil];
-	[alert show];
-	[alert release];
+	UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:@"Select Hazard Type" 
+															 delegate:self
+													cancelButtonTitle:@"Cancel" destructiveButtonTitle:nil
+													otherButtonTitles:@"Speed Camera"
+								  , @"Traffic Delay"
+								  , nil];
+	actionSheet.actionSheetStyle = UIActionSheetStyleBlackTranslucent;
+	actionSheet.delegate = self;
+	[actionSheet showInView:self.view];
+	[actionSheet release];		
 }
+
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	//NSLog(@"clickedButtonAtIndex %d", buttonIndex);
+	if (buttonIndex != actionSheet.cancelButtonIndex) {
+		NSInteger index = buttonIndex - actionSheet.firstOtherButtonIndex;
+		if (index == 0) {
+			// Speed Camera
+			[(SoundEffect *)[soundEffects objectAtIndex:kSoundSpeedCamera] play];
+			if (latestLocation.longitude >= 0) {
+				[post postIncident:@"speedcam_mobile" location:latestLocation];				
+			}
+		} else {
+			// Traffic Delay
+			[(SoundEffect *)[soundEffects objectAtIndex:kSoundTrafficDelay] play];
+			if (latestLocation.longitude >= 0) {
+				[post postIncident:@"delay" location:latestLocation];			
+			}
+		}
+	}
+}	
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -197,7 +266,7 @@
     
     // set the button's target to this table view controller so we can interpret touch events and map that to a NSIndexSet
     [button addTarget:self action:@selector(checkButtonTapped:event:) forControlEvents:UIControlEventTouchUpInside];
-//    button.backgroundColor = [UIColor colorWithWhite:0.0 alpha:0.8];
+	button.alpha = 0.6;
 	
 	[self.view addSubview:button];
 //	[button release];
@@ -228,6 +297,7 @@
 
 
 - (void)dealloc {
+	[soundEffects release];
     [super dealloc];
 }
 
