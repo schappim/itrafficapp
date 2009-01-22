@@ -16,7 +16,7 @@
 
 @implementation MapViewController
 
-// These get values assigned in loadSounds
+// These get values assigned in loadSounds method
 NSInteger kSoundSpeedCamera;
 NSInteger kSoundRedLightCamera;
 NSInteger kSoundTrafficDelay;
@@ -182,9 +182,11 @@ NSInteger kSoundRBT;
 	
 	[self loadSounds];
 	
-	// TODO - initialise these from cached map location
+	// TODO - initialise these from cached map location??
 	latestLocation.latitude = -1.0;
-	latestLocation.longitude = -1.0;	
+	latestLocation.longitude = -1.0;
+	latestSpeedkmh = -1.0;
+	latestCourse = -1.0; 
 }
 
 // Play an alert if need be.
@@ -193,20 +195,23 @@ NSInteger kSoundRBT;
 	
 	if ([points count] > 0) {
 		// Need to pick sound for correct point/marker type here....
-		// For now is just use speed camera sound
+		// For now just use speed camera sound
+		// Also need to check if approaching/receding
 		[(SoundEffect *)[soundEffects objectAtIndex:kSoundSpeedCamera] play];
 	}
 }
 
 - (void)didReceiveLocationUpdate:(CLLocationCoordinate2D)location speedkmh:(float)speedkmh course:(float)course {
 	NSLog(@"didReceiveLocationUpdate %f %f %f %f", location.latitude, location.longitude, speedkmh, course);
+	latestLocation = location;
+	latestSpeedkmh = speedkmh;
+	latestCourse = course;
+	
 	[[self mapView] moveToLatLong:location];
 	[[[self mapView] markerManager] moveMarker:userMark AtLatLon:location];
 	[userMark unhide];
 	
-	[self checkAlertsAtNewLocation:location];
-	
-	latestLocation = location;
+	[self checkAlertsAtNewLocation:location];	
 }
 
 - (void)showUserOptionsDialog {

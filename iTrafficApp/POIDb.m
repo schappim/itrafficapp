@@ -44,15 +44,19 @@ static POIDb *db;
 - (NSArray *)poiInRangeOf:(CLLocationCoordinate2D)location {
 	NSMutableArray *array = [NSMutableArray array];
 	
-	for (NSDictionary *dict in array) {
+	//for (NSDictionary *dict in array) {
+	for (NSDictionary *dict in poi) {
 		CLLocationCoordinate2D position;
 		position.latitude = [[dict objectForKey:@"lat"] floatValue];
 		position.longitude = [[dict objectForKey:@"lon"] floatValue];
 
+		// This returns pseudo-distance in degrees - 1 deg is approx. 100km
 		float distance = RMLatLongOrthogonalDistance(location, position);
 		
-		if (distance < 0.1f)
+		if (distance < 0.005) {
 			[array addObject:dict];
+			NSLog(@"Proximate hazard - lat:%f, long:%f, dist:%f", position.latitude, position.longitude, distance);
+		}
 	}
 	
 	return array;

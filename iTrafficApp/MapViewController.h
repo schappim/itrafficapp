@@ -20,6 +20,8 @@
 	RMMarker *userMark;
 	NSMutableArray *soundEffects;
 	CLLocationCoordinate2D latestLocation;
+	float latestSpeedkmh;
+	float latestCourse;
 }
 
 @property (nonatomic, readonly) IBOutlet RMMapView *mapView;
