@@ -51,6 +51,7 @@
 		B8D832560F218C440054B2F5 /* speed_camera.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832510F218C440054B2F5 /* speed_camera.wav */; };
 		B8D832570F218C440054B2F5 /* traffic_hazard.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832520F218C440054B2F5 /* traffic_hazard.wav */; };
 		B8D832630F218DE70054B2F5 /* POIDb.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D832620F218DE70054B2F5 /* POIDb.m */; };
+		BF67924E0F286CC4004592C3 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF67924D0F286CC4004592C3 /* Entitlements.plist */; };
 		BFC69EC10F26A88C000A517D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC69EC00F26A88C000A517D /* icon.png */; };
 		BFC69EC40F26B076000A517D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC69EC30F26B076000A517D /* Default.png */; };
 		BFC69EC80F26B1C6000A517D /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC69EC60F26B1C6000A517D /* SoundEffect.m */; };
@@ -147,6 +148,7 @@
 		B8D832520F218C440054B2F5 /* traffic_hazard.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = traffic_hazard.wav; sourceTree = "<group>"; };
 		B8D832610F218DE70054B2F5 /* POIDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIDb.h; sourceTree = "<group>"; };
 		B8D832620F218DE70054B2F5 /* POIDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIDb.m; sourceTree = "<group>"; };
+		BF67924D0F286CC4004592C3 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		BFC69EC00F26A88C000A517D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		BFC69EC30F26B076000A517D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BFC69EC60F26B1C6000A517D /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF67924D0F286CC4004592C3 /* Entitlements.plist */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
@@ -451,6 +454,7 @@
 				B8D832570F218C440054B2F5 /* traffic_hazard.wav in Resources */,
 				BFC69EC10F26A88C000A517D /* icon.png in Resources */,
 				BFC69EC40F26B076000A517D /* Default.png in Resources */,
+				BF67924E0F286CC4004592C3 /* Entitlements.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,15 +518,47 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ajnaware Pty Ltd";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = iTrafficApp_Prefix.pch;
 				HEADER_SEARCH_PATHS = "../RouteMe/MapView/**";
 				INFOPLIST_FILE = Info.plist;
 				PRODUCT_NAME = iTrafficApp;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "15BCA629-7622-4574-B0FE-87C5AF2CC980";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "06776D06-3C35-42E0-BADB-2E6EA5C07BB9";
 			};
 			name = Release;
+		};
+		BF6792460F286BE6004592C3 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Joseph Gentle";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "~/src/RouteMe/MapView/**";
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4CA03E1F-6E49-41EA-8A12-879B3BBE8DE1";
+				SDKROOT = iphoneos2.2;
+			};
+			name = Distribution;
+		};
+		BF6792470F286BE6004592C3 /* Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_ENTITLEMENTS = Entitlements.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ajnaware Pty Ltd";
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = iTrafficApp_Prefix.pch;
+				HEADER_SEARCH_PATHS = "../RouteMe/MapView/**";
+				INFOPLIST_FILE = Info.plist;
+				PRODUCT_NAME = iTrafficApp;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "06776D06-3C35-42E0-BADB-2E6EA5C07BB9";
+			};
+			name = Distribution;
 		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -563,6 +599,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				BF6792470F286BE6004592C3 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -572,6 +609,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				BF6792460F286BE6004592C3 /* Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

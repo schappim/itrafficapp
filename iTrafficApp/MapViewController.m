@@ -16,11 +16,19 @@
 
 @implementation MapViewController
 
+NSString *const kStringSpeedCameraStatic = @"speedcam_static";
+NSString *const kStringSpeedCameraMobile = @"speedcam_mobile";
+NSString *const kStringRedLightCam = @"redlightcam";
+NSString *const kStringSpeedRedLightCam = @"speedredcam_static";
+NSString *const kStringRBT = @"rbt";
+NSString *const kStringCrash = @"crash";
+NSString *const kStringDelay = @"delay";
+
 // These get values assigned in loadSounds method
 NSInteger kSoundSpeedCamera;
 NSInteger kSoundRedLightCamera;
 NSInteger kSoundTrafficDelay;
-NSInteger kSoundTrafficHazzard;
+NSInteger kSoundTrafficHazard;
 NSInteger kSoundRBT;
 
 /*
@@ -76,16 +84,16 @@ NSInteger kSoundRBT;
 		RMMarker *marker;
 		
 		NSString *type = [dict objectForKey:@"type"];
-		if ([type isEqualToString:@"speedcam_static"])
+		if ([type isEqualToString:kStringSpeedCameraStatic])
 			marker = [[RMMarker alloc] initWithCGImage:imageCameraStatic];
-		else if ([type isEqualToString:@"speedcam_mobile"])
+		else if ([type isEqualToString:kStringSpeedCameraMobile])
 			marker = [[RMMarker alloc] initWithCGImage:imageCameraMobile];
-		else if ([type isEqualToString:@"redlightcam"]
-				 || [type isEqualToString:@"speedredcam_static"])
+		else if ([type isEqualToString:kStringRedLightCam]
+				 || [type isEqualToString:kStringSpeedRedLightCam])
 			marker = [[RMMarker alloc] initWithCGImage:imageRedLight];
-		else if ([type isEqualToString:@"rbt"])
+		else if ([type isEqualToString:kStringRBT])
 			marker = [[RMMarker alloc] initWithCGImage:imageRBT];
-		else if ([type isEqualToString:@"crash"])
+		else if ([type isEqualToString:kStringCrash])
 			marker = [[RMMarker alloc] initWithCGImage:imageRBT];
 		else {
 			NSLog(@"Unrecognised marker type %@", type);
@@ -152,7 +160,7 @@ NSInteger kSoundRBT;
 	soundFile = [mainBundle pathForResource:soundFileName ofType:@"wav"];
 	thisSoundEffect = [[SoundEffect alloc] initWithContentsOfFile:soundFile];
 	[soundEffects addObject:thisSoundEffect];
-	kSoundTrafficHazzard = [soundEffects count]-1;
+	kSoundTrafficHazard = [soundEffects count]-1;
 	[thisSoundEffect release];
 	
 	soundFileName = @"rbt";
@@ -191,13 +199,46 @@ NSInteger kSoundRBT;
 
 // Play an alert if need be.
 - (void)checkAlertsAtNewLocation:(CLLocationCoordinate2D)location {
-	NSArray *points = [[POIDb sharedInstance] poiInRangeOf:location];
+	NSArray *points = [[POIDb sharedInstance] poiInRangeOf:location radiusMetres:500.0];
 	
 	if ([points count] > 0) {
-		// Need to pick sound for correct point/marker type here....
-		// For now just use speed camera sound
-		// Also need to check if approaching/receding
-		[(SoundEffect *)[soundEffects objectAtIndex:kSoundSpeedCamera] play];
+		// Need to pick sound for correct point/marker type here....		
+		// For now just use first point (may be multiple)
+		NSInteger iPoint;
+		for (iPoint=0; iPoint<[points count]; ++iPoint) {
+			NSDictionary *thisPoint = [points objectAtIndex:0];	
+			// Need to check if approaching/receding & ignore if receding
+			CLLocationCoordinate2D position;
+			position.latitude = [[thisPoint objectForKey:@"lat"] floatValue];
+			position.longitude = [[thisPoint objectForKey:@"lon"] floatValue];
+			
+			float directionToMarker = [LocationHandler courseFromPoint:latestLocation toPoint:position];
+			// Compare with current direction of travel - reduce to range +/- 180
+			float directionDif = fmod((directionToMarker - latestCourse + 180.0), 360.0) - 180.0;
+			NSLog(@"directionDif: %f", directionDif);
+			if (fabs(directionDif) < 90) {			
+				NSString *type = [thisPoint objectForKey:@"type"];
+				NSLog(@"type %@", type);
+				NSInteger soundIndex;
+				if (([type isEqualToString:kStringSpeedCameraStatic]) 
+					|| ([type isEqualToString:kStringSpeedCameraMobile])
+					|| ([type isEqualToString:kStringSpeedRedLightCam])) {
+					soundIndex = kSoundSpeedCamera;
+				} else if ([type isEqualToString:kStringRedLightCam]) {
+					soundIndex = kSoundRedLightCamera;
+				} else if ([type isEqualToString:kStringRBT]) {
+					soundIndex = kSoundRBT;			
+				} else if ([type isEqualToString:kStringCrash]) {
+					soundIndex = kSoundTrafficHazard;			
+				} else if ([type isEqualToString:kStringDelay]) {
+					soundIndex = kSoundTrafficDelay;
+				} else {
+					soundIndex = kSoundTrafficDelay;			
+				}
+				[(SoundEffect *)[soundEffects objectAtIndex:soundIndex] play];	
+				break;
+			}					
+		}		
 	}
 }
 

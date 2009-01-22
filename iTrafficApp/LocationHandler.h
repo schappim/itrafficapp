@@ -35,6 +35,7 @@ typedef struct {
 - (id)initWithReceiver:(id)idReceiver;
 - (void)suspendUpdates;
 - (void)reStartUpdates;
++ (float)courseFromPoint:(CLLocationCoordinate2D)pointA toPoint:(CLLocationCoordinate2D)pointB;
 
 @property (readonly) BOOL isUpdating;
 

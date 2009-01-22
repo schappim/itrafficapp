@@ -18,7 +18,7 @@
 }
 
 - (NSArray *)allPoints;
-- (NSArray *)poiInRangeOf:(CLLocationCoordinate2D)location;
+- (NSArray *)poiInRangeOf:(CLLocationCoordinate2D)location radiusMetres:(float)radius;
 
 + (POIDb *)sharedInstance;
 

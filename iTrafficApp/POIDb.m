@@ -41,19 +41,22 @@ static POIDb *db;
 	return poi;
 }
 
-- (NSArray *)poiInRangeOf:(CLLocationCoordinate2D)location {
+//- (NSArray *)poiInRangeOf:(CLLocationCoordinate2D)location {
+- (NSArray *)poiInRangeOf:(CLLocationCoordinate2D)location radiusMetres:(float)radius {
 	NSMutableArray *array = [NSMutableArray array];
-	
+
+	// This queries pseudo-distance in degrees - 1 deg is approx. 100km
+	float radiusDegrees = radius / 100000;
+
 	//for (NSDictionary *dict in array) {
 	for (NSDictionary *dict in poi) {
 		CLLocationCoordinate2D position;
 		position.latitude = [[dict objectForKey:@"lat"] floatValue];
 		position.longitude = [[dict objectForKey:@"lon"] floatValue];
 
-		// This returns pseudo-distance in degrees - 1 deg is approx. 100km
 		float distance = RMLatLongOrthogonalDistance(location, position);
 		
-		if (distance < 0.005) {
+		if (distance < radiusDegrees) {
 			[array addObject:dict];
 			NSLog(@"Proximate hazard - lat:%f, long:%f, dist:%f", position.latitude, position.longitude, distance);
 		}

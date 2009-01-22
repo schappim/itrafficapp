@@ -12,6 +12,35 @@
 
 @synthesize isUpdating;
 
+float rad(float deg) {
+	return M_PI * deg / 180.0;
+}
+
+float degrees(float radians) {
+	return 180.0 * radians / M_PI;
+}
+
++ (float)courseFromPoint:(CLLocationCoordinate2D)pointA toPoint:(CLLocationCoordinate2D)pointB {
+	/*
+	// Returns distance in metres 
+	float dlat = rad(pointB.latitude - pointA.latitude);
+	float dlong = rad(pointB.longitude - pointA.longitude);
+	float a = sin(dlat/2) * sin(dlat/2) 
+		+ cos(rad(pointA.latitude)) * cos(rad(pointB.latitude))
+		* sin(rad(dlong/2)) * sin(rad(dlong/2));
+	float c = 2 * atan2(sqrt(a), sqrt(1-a));
+	return 6371 * c;
+	*/
+	// Returns direction in degs N=0; E=90
+	float dlong = rad(pointB.longitude - pointA.longitude);
+	float y = sin(rad(dlong)) * cos(rad(pointB.latitude));
+	float x = cos(rad(pointA.latitude)) * sin(rad(pointB.latitude))
+	- sin(rad(pointA.latitude)) * cos(rad(pointB.latitude)) * cos(rad(dlong));
+	float d = degrees(atan2(y, x));
+	d = fmod((d + 360.0), 360.0);
+	return d;
+}
+
 - (CLLocationSimulationPoint)makeSimulationPoint:(CLLocationDegrees)latitude 
 	:(CLLocationDegrees)longitude
 	:(float)speedkmh
