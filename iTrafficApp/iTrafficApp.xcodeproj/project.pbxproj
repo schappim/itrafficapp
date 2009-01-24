@@ -52,6 +52,7 @@
 		B8D832570F218C440054B2F5 /* traffic_hazard.wav in Resources */ = {isa = PBXBuildFile; fileRef = B8D832520F218C440054B2F5 /* traffic_hazard.wav */; };
 		B8D832630F218DE70054B2F5 /* POIDb.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D832620F218DE70054B2F5 /* POIDb.m */; };
 		BF67924E0F286CC4004592C3 /* Entitlements.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF67924D0F286CC4004592C3 /* Entitlements.plist */; };
+		BF6DBC0E0F2A8E2E00FA92D7 /* drop_pin_delay.png in Resources */ = {isa = PBXBuildFile; fileRef = BF6DBC0D0F2A8E2E00FA92D7 /* drop_pin_delay.png */; };
 		BFC69EC10F26A88C000A517D /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC69EC00F26A88C000A517D /* icon.png */; };
 		BFC69EC40F26B076000A517D /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = BFC69EC30F26B076000A517D /* Default.png */; };
 		BFC69EC80F26B1C6000A517D /* SoundEffect.m in Sources */ = {isa = PBXBuildFile; fileRef = BFC69EC60F26B1C6000A517D /* SoundEffect.m */; };
@@ -149,6 +150,7 @@
 		B8D832610F218DE70054B2F5 /* POIDb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = POIDb.h; sourceTree = "<group>"; };
 		B8D832620F218DE70054B2F5 /* POIDb.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = POIDb.m; sourceTree = "<group>"; };
 		BF67924D0F286CC4004592C3 /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
+		BF6DBC0D0F2A8E2E00FA92D7 /* drop_pin_delay.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = drop_pin_delay.png; sourceTree = "<group>"; };
 		BFC69EC00F26A88C000A517D /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		BFC69EC30F26B076000A517D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		BFC69EC60F26B1C6000A517D /* SoundEffect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SoundEffect.m; sourceTree = "<group>"; };
@@ -322,6 +324,7 @@
 		B84CD6510F20D4CD00782038 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				BF6DBC0D0F2A8E2E00FA92D7 /* drop_pin_delay.png */,
 				BFC69EC30F26B076000A517D /* Default.png */,
 				BFC69EC00F26A88C000A517D /* icon.png */,
 				B8D8324D0F218C440054B2F5 /* audio */,
@@ -455,6 +458,7 @@
 				BFC69EC10F26A88C000A517D /* icon.png in Resources */,
 				BFC69EC40F26B076000A517D /* Default.png in Resources */,
 				BF67924E0F286CC4004592C3 /* Entitlements.plist in Resources */,
+				BF6DBC0E0F2A8E2E00FA92D7 /* drop_pin_delay.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

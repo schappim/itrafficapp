@@ -73,6 +73,7 @@ NSInteger kSoundRBT;
 	CGImageRef imageRedLight = [RMMarker loadPNGFromBundle:@"drop_pin_red-light"];
 	CGImageRef imageCameraMobile = [RMMarker loadPNGFromBundle:@"drop_pin_camera_mobile"];
 	CGImageRef imageCameraStatic = [RMMarker loadPNGFromBundle:@"drop_pin_camera2"];
+	CGImageRef imageDelay = [RMMarker loadPNGFromBundle:@"drop_pin_delay"];
 
 	int i = 0;
 	for (NSDictionary *dict in poi) {
@@ -95,6 +96,8 @@ NSInteger kSoundRBT;
 			marker = [[RMMarker alloc] initWithCGImage:imageRBT];
 		else if ([type isEqualToString:kStringCrash])
 			marker = [[RMMarker alloc] initWithCGImage:imageRBT];
+		else if ([type isEqualToString:kStringDelay])
+			marker = [[RMMarker alloc] initWithCGImage:imageDelay];
 		else {
 			NSLog(@"Unrecognised marker type %@", type);
 			marker = [[RMMarker alloc] initWithCGImage:imageCameraStatic];
